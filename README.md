@@ -1,4 +1,4 @@
-python-doctl
+py-doctl
 ============
 
 A Python wrapper for the excellent [doctl](https://github.com/digitalocean/doctl) command-line utility, from [Digital Ocean](https://digitalocean.com).

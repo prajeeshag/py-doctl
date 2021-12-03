@@ -17,7 +17,6 @@ class DOCtlError(RuntimeError):
         self.output = c.out
 
 
-
 def system_which(command, mult=False):
     """Emulates the system's which. Returns None if not found."""
     _which = "which -a" if not os.name == "nt" else "where"
@@ -69,7 +68,8 @@ class DigitalOcean:
 
         doctl_location = system_which("doctl")
         if not doctl_location:
-            raise RuntimeError('doctl does not appear to be installed and on your PATH!')
+            raise RuntimeError(
+                'doctl does not appear to be installed and on your PATH!')
 
         if expect_json:
             args = list(args)
@@ -205,7 +205,7 @@ class ComputeDroplet:
         if wait:
             args.extend(["--wait"])
 
-        return doctl("compute", "droplet", "create", *args)
+        return self.do.doctl("compute", "droplet", "create", *args)
 
     def actions(self, droplet_id):
         """droplet actions."""
@@ -619,7 +619,8 @@ class ComputeLoadBalancer:
                 [f"{k}:{v}" for (k, v) in forwarding_rules.items()]
             )
         if hasattr(health_check, items):
-            health_check = ",".join([f"{k}:{v}" for (k, v) in health_check.items()])
+            health_check = ",".join(
+                [f"{k}:{v}" for (k, v) in health_check.items()])
 
         args = []
         args.extend(["--name", name])
@@ -661,7 +662,8 @@ class ComputeLoadBalancer:
                 [f"{k}:{v}" for (k, v) in forwarding_rules.items()]
             )
         if hasattr(health_check, items):
-            health_check = ",".join([f"{k}:{v}" for (k, v) in health_check.items()])
+            health_check = ",".join(
+                [f"{k}:{v}" for (k, v) in health_check.items()])
 
         args = []
         args.extend(["--name", name])
@@ -756,6 +758,7 @@ class ComputeLoadBalancer:
 
 class ComputePlugin:
     """Access plugin commands."""
+
     def __init__(self, do):
         self.do = do
 
@@ -770,6 +773,7 @@ class ComputePlugin:
 
 class ComputeSnapshot:
     """Access snapshot commands."""
+
     def __init__(self, do):
         self.do = do
 
@@ -789,6 +793,7 @@ class ComputeSnapshot:
 
 class ComputeSSHKey:
     """Access ssh key commands"""
+
     def __init__(self, do):
         self.do = do
 
@@ -827,6 +832,7 @@ class ComputeSSHKey:
 
 class ComputeTag:
     """Access tag commands."""
+
     def __init__(self, do):
         self.do = do
 
@@ -852,6 +858,7 @@ class ComputeTag:
 
 class ComputeVolume:
     """Access volume commands."""
+
     def __init__(self, do):
         self.do = do
 
