@@ -183,6 +183,7 @@ class ComputeDroplet:
         enable_ipv6=False,
         enble_backups=False,
         wait=False,
+        ssh_keys=[],
     ):
         """create droplet."""
         args = []
@@ -204,6 +205,9 @@ class ComputeDroplet:
             args.extend(["--enable-ipv6"])
         if wait:
             args.extend(["--wait"])
+        if ssh_keys:
+            sshkeys = ' '.join([str(item) for item in ssh_keys])
+            args.extend(["--ssh-keys", sshkeys])
 
         return self.do.doctl("compute", "droplet", "create", *args)
 
