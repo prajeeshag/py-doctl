@@ -1,6 +1,8 @@
+backports.zoneinfo==0.2.1; python_version < "3.9" and python_version >= "3.6" and (python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.6")
 dateparser==1.1.0; python_version >= "3.5"
 delegator.py==0.1.1
 humanize==3.13.1; python_version >= "3.6"
+importlib-metadata==4.8.2; python_version < "3.8" and python_version >= "3.6"
 maya==0.6.1
 pendulum==2.1.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pexpect==4.8.0
@@ -12,5 +14,7 @@ pytzdata==2020.1; python_version >= "2.7" and python_full_version < "3.0.0" or p
 regex==2021.11.10; python_version >= "3.5"
 six==1.16.0; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.5"
 snaptime==0.2.4
+typing-extensions==4.0.1; python_version < "3.8" and python_version >= "3.6"
 tzdata==2021.5; platform_system == "Windows" and python_version >= "3.6" and (python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.6")
 tzlocal==4.1; python_version >= "3.6"
+zipp==3.6.0; python_version < "3.8" and python_version >= "3.6"
