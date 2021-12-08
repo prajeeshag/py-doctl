@@ -6,7 +6,7 @@ authors = ["prajeeshag <prajeeshag@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 "delegator.py" = "^0.1.1"
 maya = "^0.6.1"
 
